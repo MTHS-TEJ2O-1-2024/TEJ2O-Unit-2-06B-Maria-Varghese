@@ -1,10 +1,23 @@
-"""
-Created by: Mr. Coxall
-Created on: Sep 2020
-This module is a Micro:bit MicroPython program
-"""
+/* Copyright (c) 2020 MTHS All rights reserved
+ *
+ * Created by: Maria
+ * Created on: Sep 2024
+ * This program turns the LED on and off
+*/
 
-from microbit import *
+//setup
+basic.clearScreen()
+basic.showIcon(IconNames.Happy)
+pins.digitalWritePin(DigitalPin.P19, 0)
 
+//turn on the LED
+input.onButtonPressed(Button.A, function() {
+    basic.showIcon(IconNames.Yes)
+    pins.digitalWritePin(DigitalPin.P19, 1)
+})
 
-display.scroll("Hello, World!")
+//turn on the LED
+input.onButtonPressed(Button.B, function () {
+    basic.showIcon(IconNames.No)
+    pins.digitalWritePin(DigitalPin.P19, 0)
+})
